@@ -5,6 +5,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
+import bodyparser from 'body-parser';
 import bootstrap from './bootstrap';
 import router from './router';
 
@@ -13,6 +14,7 @@ require('dotenv').config();
 const app = express();
 app.use(compression());
 app.use(cookieParser());
+app.use(bodyparser.json());
 app.use(cors());
 app.use(helmet());
 app.use(hpp());
